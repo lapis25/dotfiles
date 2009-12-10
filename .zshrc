@@ -30,8 +30,16 @@ setopt auto_cd
 setopt auto_pushd
 
 #alias
-alias ls='ls -G -w'
 alias ll='ls -l'
+
+case $OSTYPE in
+  darwin*)
+    alias ls='ls -G -w'
+    ;;
+  linux*)
+    alias ls='ls --color'
+    ;;
+esac
 
 #ls/comp colors
 export LSCOLORS=exfxcxdxbxegedabagacad
@@ -45,14 +53,13 @@ colors
 PROMPT="%{${fg[cyan]}%}%n@%m%{${reset_color}%}:%{${fg[blue]}%}%(5~,%-3~/.../%2~,%~)%{${reset_color}%}%# "
 PROMPT2="%{${fg[cyan]}%}%n@%m%{${reset_color}%}:%{${fg[blue]}%}%(5~,%-3~/.../%2~,%~)%{${reset_color}%}%# "
 SPROMPT="%{${fg[blue]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
-[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-  PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
 
 #screen title set
 preexec () {
-  [ ${STY} ] && echo -ne "\ek${1%% *}\e\\"  
+  if [ ${TERM} = 'screen' ]; then
+    echo -ne "\ek${1%% *}\e\\"
+  fi
 }
-
 
 #other setting
 setopt noautoremoveslash
