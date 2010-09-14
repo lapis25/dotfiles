@@ -2,8 +2,17 @@
 bindkey -e
 
 #completion
+fpath=($HOME/.zsh/functions $fpath)
 autoload -Uz compinit
 compinit
+
+
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*' group-name ''
+
 setopt complete_aliases
 setopt list_packed
 setopt nolistbeep
@@ -64,3 +73,13 @@ preexec () {
 #other setting
 setopt noautoremoveslash
 
+#reload comp funcs
+r() {
+  local f
+  f=(~/.zsh/functions/*(.))
+  unfunction $f:t 2> /dev/null
+  autoload -U $f:t
+}
+
+
+source /Users/lapis25/perl5/perlbrew/etc/bashrc

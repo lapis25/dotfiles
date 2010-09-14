@@ -1,0 +1,39 @@
+#compdef perlbrew
+
+typeset -A opt_args
+local context state line
+
+_arguments -C \
+    '(- 1 *)'{-h,--help}'[prints this help]' \
+    '(-f --force)'{-f,--force}'[Force installation of a perl]' \
+    '(-q --quiet)'{-q,--quiet}'[Log output to a log file rather than STDOUT. This is the default.]' \
+    '(-v --verbose)'{-v,--verbose}'[Log output to STDOUT rather than a logfile]' \
+    '-D=-[pass through switches to the perl Configure script]' \
+    '(-as)'-as+'[Install a given perl under an alias.]:alias name' \
+    '1: :->cmds' \
+    '(1 *): :->args' && return 0
+
+case $state in
+  cmds)
+    local -a cmds
+    cmds=( init install installed switch )
+
+    _describe -t commands 'perlbrew command' cmds && ret=0
+  ;;
+  args)
+    case $line[1] in
+      switch)
+       local -a versions
+       versions=($(_call_program commands perlbrew installed 2>/dev/null | grep -v '(*)' | perl -pe 's/\n/ /m'))
+       _wanted versions expl 'perl version' compadd $versions && ret=0 
+      ;;
+      install)
+      ;;
+      *)
+        (( ret )) && _message 'no more arguments'
+      ;;
+    esac
+  ;;
+esac
+
+return ret
