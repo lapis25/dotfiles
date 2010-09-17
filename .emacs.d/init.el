@@ -121,9 +121,9 @@
 (define-key anything-map "\C-v" 'anything-next-page)
 (define-key anything-map "\M-v" 'anything-previous-page)
 
-;(require 'auto-complete-config)
-;(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/ac-dict")
-;(ac-config-default)
+(when (require 'auto-complete-config)
+  (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-install/ac-dict")
+  (ac-config-default))
 
 ;;; modes
 ;;dired-x
