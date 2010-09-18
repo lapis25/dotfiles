@@ -6,12 +6,11 @@
 (set-language-environment 'Japanese)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-complete"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
 
 ;; auto-install
 (require 'auto-install)
-(setq auto-install-directory "~/.emacs.d/auto-install/")
+(setq auto-install-directory "~/.emacs.d/elisp/")
 (auto-install-update-emacswiki-package-name t)
 
 ;;; display
@@ -122,7 +121,7 @@
 (define-key anything-map "\M-v" 'anything-previous-page)
 
 (when (require 'auto-complete-config)
-  (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-install/ac-dict")
+  (add-to-list 'ac-dictionary-directories "~/.emacs.d/elisp/ac-dict")
   (ac-config-default))
 
 ;;; modes
