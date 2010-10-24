@@ -4,7 +4,7 @@ typeset -A opt_args
 local context state line
 
 _arguments -C \
-    '(- 1 *)'{-h,--help}'[prints this help]' \
+    '(- 1 *)'{-h,--help}'[prints help]' \
     '(-f --force)'{-f,--force}'[Force installation of a perl]' \
     '(-q --quiet)'{-q,--quiet}'[Log output to a log file rather than STDOUT. This is the default.]' \
     '(-v --verbose)'{-v,--verbose}'[Log output to STDOUT rather than a logfile]' \
