@@ -16,7 +16,7 @@ _arguments -C \
 case $state in
   cmds)
     local -a cmds
-    cmds=( init install installed switch list use off help mirror version )
+    cmds=( init install switch list use off help mirror version )
 
     _describe -t commands 'perlbrew command' cmds && ret=0
   ;;
@@ -24,7 +24,7 @@ case $state in
     case $line[1] in
       switch | use)
        local -a versions
-       versions=($(_call_program commands perlbrew installed 2>/dev/null | grep -v '(*)' | perl -pe 's/\n/ /m'))
+       versions=($(_call_program commands perlbrew list 2>/dev/null | grep -v '(*)' | perl -pe 's/\n/ /m'))
        _wanted versions expl 'perl version' compadd $versions && ret=0 
       ;;
       install)
