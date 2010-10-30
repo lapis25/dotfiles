@@ -3,3 +3,5 @@ export MANPATH=/usr/local/man:$MANPATH
 export LANG=ja_JP.UTF-8
 
 export DISPLAY=:0
+export EDITOR=vim
+
