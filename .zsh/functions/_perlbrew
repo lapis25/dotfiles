@@ -24,7 +24,7 @@ case $state in
     case $line[1] in
       switch | use)
        local -a versions
-       versions=($(_call_program commands perlbrew list 2>/dev/null | grep -v '*' | perl -pe 's/\n/ /m'))
+       versions=($(ls $PERLBREW_ROOT/perls/))
        _wanted versions expl 'perl version' compadd $versions && ret=0 
       ;;
       install)
