@@ -57,10 +57,13 @@ colors
 
 PROMPT="%{${fg[cyan]}%}%n@%m%{${reset_color}%}:%{${fg[red]}%}%(5~,%-3~/.../%2~,%~)%{${reset_color}%}%# "
 PROMPT2="%{${fg[cyan]}%}%n@%m%{${reset_color}%}:%{${fg[red]}%}%(5~,%-3~/.../%2~,%~)%{${reset_color}%}%# "
-SPROMPT="%{${fg[blue]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
 
 #less
 export LESS="-R"
+
+#grep
+export GREP_OPTIONS='--color=always'
 
 #screen title set
 preexec () {
