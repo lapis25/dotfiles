@@ -22,6 +22,7 @@ bindkey "\e[Z" reverse-menu-complete
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+setopt extended_history
 setopt hist_ignore_dups
 setopt share_history
 
