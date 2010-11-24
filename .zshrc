@@ -42,7 +42,7 @@ case $OSTYPE in
     alias ls='ls -G -w'
     ;;
   linux*)
-    alias ls='ls --color'
+    alias ls='ls --color=alway'
     ;;
 esac
 
@@ -58,6 +58,9 @@ colors
 PROMPT="%{${fg[cyan]}%}%n@%m%{${reset_color}%}:%{${fg[red]}%}%(5~,%-3~/.../%2~,%~)%{${reset_color}%}%# "
 PROMPT2="%{${fg[cyan]}%}%n@%m%{${reset_color}%}:%{${fg[red]}%}%(5~,%-3~/.../%2~,%~)%{${reset_color}%}%# "
 SPROMPT="%{${fg[blue]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+
+#less
+export LESS="-R"
 
 #screen title set
 preexec () {
