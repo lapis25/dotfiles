@@ -6,12 +6,12 @@ fpath=($HOME/.zsh/functions $fpath)
 autoload -Uz compinit
 compinit
 
-
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name ''
+zstyle ':completion:*:default' menu select=1
 
 setopt complete_aliases
 setopt list_packed
@@ -25,12 +25,7 @@ SAVEHIST=1000000
 setopt extended_history
 setopt hist_ignore_dups
 setopt share_history
-
 autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
 
 #correct
 setopt correct
