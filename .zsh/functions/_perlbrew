@@ -16,7 +16,7 @@ _arguments -C \
 case $state in
   cmds)
     local -a cmds
-    cmds=( init install switch list use off help mirror version )
+    cmds=( init install switch list use off help mirror version exec )
 
     _describe -t commands 'perlbrew command' cmds && ret=0
   ;;
@@ -27,7 +27,7 @@ case $state in
        versions=($(ls $PERLBREW_ROOT/perls/ | perl -pe 's/$ENV{PERLBREW_PERL}//;s/\n/ /m'))
        _wanted versions expl 'perl version' compadd $versions && ret=0 
       ;;
-      install)
+      install | exec)
       ;;
       *)
         (( ret )) && _message 'no more arguments'
