@@ -16,7 +16,7 @@ _arguments -C \
 case $state in
   cmds)
     local -a cmds
-    cmds=( init install switch list use off help mirror version )
+    cmds=( init install uninstall switch list use available off help mirror version install-cpanm self-upgrade env )
 
     _describe -t commands 'perlbrew command' cmds && ret=0
   ;;
@@ -28,6 +28,14 @@ case $state in
        _wanted versions expl 'perl version' compadd $versions && ret=0 
       ;;
       install)
+       local -a perl_versions
+       perl_versions=($(perlbrew available|perl -pe 's/^i//m;s/\n/ /m') perl-blead )
+       _wanted perl_versions expl 'perl-<version-number>' compadd $perl_versions && ret=0 
+      ;;
+      uninstall)
+       local -a versions
+       versions=($(ls $PERLBREW_ROOT/perls/ | perl -pe 's/\n/ /m'))
+       _wanted versions expl 'perl version' compadd $versions && ret=0 
       ;;
       *)
         (( ret )) && _message 'no more arguments'
