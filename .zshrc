@@ -62,9 +62,6 @@ SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
 #less
 export LESS="-R"
 
-#grep
-export GREP_OPTIONS='--color=always'
-
 #screen title set
 preexec () {
   if [ ${TERM} = 'screen' ]; then
@@ -84,3 +81,4 @@ r() {
 }
 
 source $HOME/perl5/perlbrew/etc/bashrc
+
