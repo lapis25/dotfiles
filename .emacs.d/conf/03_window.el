@@ -3,9 +3,12 @@
 ;;対応する括弧をハイライト
 (show-paren-mode 1)
 
+;; 現在行に色を付ける
+(global-hl-line-mode t)
+
 ;; window
 (tool-bar-mode -1)
-
+(scroll-bar-mode -1)
 
 ;;bell消す
 (setq ring-bell-function (lambda () ()))
