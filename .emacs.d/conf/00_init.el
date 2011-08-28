@@ -21,9 +21,9 @@
 (setq indent-line-function 'indent-relative-maybe)
 
 ;;; history
-(setq history-length t)
+(savehist-mode 1)
+(setq history-length 10000)
 
 ;; selection setting
 (delete-selection-mode 1)
 (pc-selection-mode)
-
