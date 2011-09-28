@@ -81,4 +81,5 @@ r() {
 }
 
 source $HOME/perl5/perlbrew/etc/bashrc
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
