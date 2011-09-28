@@ -1,6 +1,6 @@
 ;; (auto-install-from-emacswiki "auto-install.el")
 (require 'auto-install)
-(setq auto-install-directory "~/.emacs.d/elisp/")
+(setq auto-install-directory "~/.emacs.d/install-lisp/")
 (auto-install-update-emacswiki-package-name t)
 
 ;; ;; (auto-install-from-emacswiki "auto-async-byte-compile.el")
