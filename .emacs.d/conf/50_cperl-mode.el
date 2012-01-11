@@ -1,4 +1,6 @@
-;; cperl-mode
+;;; cperl-mode
+;; (auto-install-from-emacswiki "perl-completion.el")
+
 (progn
   (defalias 'perl-mode 'cperl-mode)
   (setq cperl-indent-level 4
