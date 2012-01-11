@@ -1,3 +1,4 @@
 ;;anti alias
-(setq mac-allow-anti-aliasing t)
-
+(when darwin-p
+  (when carbon-p
+  (setq mac-allow-anti-aliasing t)))
