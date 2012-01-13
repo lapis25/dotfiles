@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: warn explain
+# key: ex
+# binding: direct-keybinding
+# --
+warn explain $1;

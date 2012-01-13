@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: my ($self, ...) = @_;
+# key: self@
+# --
+my ($self, ${1:@args}) = @_;
