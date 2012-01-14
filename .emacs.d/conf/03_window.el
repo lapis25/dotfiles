@@ -4,8 +4,9 @@
 (show-paren-mode 1)
 
 ;; window
-(menu-bar-mode -1)
-(tool-bar-mode -1)
+(unless darwin-p
+  (menu-bar-mode nil))
+(tool-bar-mode nil)
 
 (require 'color-theme)
 (color-theme-pok-wob)
