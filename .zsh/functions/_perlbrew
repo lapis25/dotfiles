@@ -19,7 +19,7 @@ _arguments -C \
 case $state in
   cmds)
     local -a cmds
-    cmds=( init install uninstall switch list use available off help mirror version install-cpanm self-upgrade env )
+    cmds=( init install uninstall switch switch-off list use available off help mirror version install-cpanm self-upgrade env )
 
     _describe -t commands 'perlbrew command' cmds && ret=0
   ;;

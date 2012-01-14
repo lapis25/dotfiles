@@ -5,5 +5,6 @@
 ;; run command: make install EMACS=/usr/bin/emacs PREFIX=$HOME/.emacs.d/install-lisp VERSION_SPECIFIC_LISPDIR=$HOME/.emacs.d/install-lisp LISPDIR=$HOME/.emacs.d/install-lisp
 
 (require 'elscreen)
+(load "elscreen-gf" "ElScreen-gf" t)
 (load "elscreen-dired" "ElScreen-dired" t)
 (load "elscreen-server" "ElScreen-server" t)

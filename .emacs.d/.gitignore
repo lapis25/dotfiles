@@ -2,3 +2,6 @@
 *.elc
 url
 ac-comphist.dat
+install-lisp/
+history
+

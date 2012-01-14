@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Data::Dumper
+# key: dd
+# --
+warn Data::Dumper::Dumper $1;

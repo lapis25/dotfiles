@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: self = shift
+# key: self
+# --
+my $self = shift;

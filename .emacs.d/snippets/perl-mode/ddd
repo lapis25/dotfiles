@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Deparse Data::Dumper
+# key: ddd
+# --
+{ local $Data::Dumper::Deparse = 1; warn Data::Dumper::Dumper $1; }

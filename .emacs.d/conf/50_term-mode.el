@@ -1,15 +1,6 @@
-;; ansi-term
-(require 'shell-pop)
-(shell-pop-set-internal-mode "ansi-term")
-(shell-pop-set-internal-mode-shell "/bin/zsh")
-(defvar ansi-term-after-hook nil)
+;; multi-term
+;; (auto-install-from-emacswiki "multi-term.el")
 
-(add-hook 'ansi-term-after-hook
-           '(lambda ()
-             (define-key term-raw-map "\C-t" 'shell-pop)))
-(defadvice ansi-term (after ansi-term-after-advice (arg))
-  "run hook as after advice"
-  (run-hooks 'ansi-term-after-hook))
-(ad-activate 'ansi-term)
-
-(global-set-key "\C-t" 'shell-pop)
+(require 'multi-term)
+;(setq multi-term-program "/bin/zsh")
+(global-set-key (kbd "M-s") 'multi-term-next)

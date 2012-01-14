@@ -1,7 +1,7 @@
 (setq user-full-name "lapis25")
 (setq user-mail-address "lapis25@gmail.com")
 
-; lanuage
+;; lanuage
 (set-language-environment 'Japanese)
 
 ;; utf-8 優先
@@ -27,3 +27,7 @@
 ;; selection setting
 (delete-selection-mode 1)
 (pc-selection-mode)
+
+; server start for emacs-client
+(require 'server)
+(server-start)
