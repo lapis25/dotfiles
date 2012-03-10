@@ -13,6 +13,7 @@
   (run-scheme gosh-program-name))
 (define-key global-map
   "\C-cS" 'scheme-other-window)
+(push '("*scheme*" :position right :width 0.5 :noselect t) popwin:special-display-config)
 
 ;(show-paren-mode)
 (progn
@@ -75,5 +76,4 @@
   (put 'with-time-counter 'scheme-indent-function 1)
   (put 'with-signal-handlers 'scheme-indent-function 1)
   (put 'with-locking-mutex 'scheme-indent-function 1)
-  (put 'guard 'scheme-indent-function 1)
-)
+  (put 'guard 'scheme-indent-function 1))
