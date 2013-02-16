@@ -2,9 +2,17 @@
 	name = lapis25
 	email = lapis25@gmail.com
 [color]
-	ui = auto
+	ui = true
 [core]
 	pager = cat
+	editor = screen -X select 0 & emacsclient
+[github]
+	user = lapis25
+	token = d45e9bef8083493a4378a471b06cb9cf
 [alias]
-	st = status
 	co = checkout
+	olog = log --oneline
+	st = status
+
+[pull]
+	rebase = true
