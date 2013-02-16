@@ -36,6 +36,9 @@ setopt auto_pushd
 
 #alias
 alias ll='ls -l'
+alias l='less'
+alias s="screen -R"
+alias e='emacsclient'
 
 case $OSTYPE in
   darwin*)
