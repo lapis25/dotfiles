@@ -23,11 +23,21 @@
 ;;; history
 (savehist-mode 1)
 (setq history-length 10000)
+(setq recentf-max-saved-items 1000)
 
 ;; selection setting
 (delete-selection-mode 1)
 (pc-selection-mode)
 
+;; gc stting
+(setq gc-cons-threshold (* 10 gc-cons-threshold))
+
+;; completion
+(setq completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+(icomplete-mode 1)
+
 ; server start for emacs-client
 (require 'server)
-(server-start)
+(unless (server-running-p)
+    (server-start))

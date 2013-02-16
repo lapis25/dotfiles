@@ -5,3 +5,6 @@
 	ui = auto
 [core]
 	pager = cat
+[alias]
+	st = status
+	co = checkout
