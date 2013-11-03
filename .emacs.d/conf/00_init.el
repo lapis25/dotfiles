@@ -27,15 +27,22 @@
 
 ;; selection setting
 (delete-selection-mode 1)
-(pc-selection-mode)
+;(pc-selection-mode)
 
-;; gc stting
+;; gc setting
 (setq gc-cons-threshold (* 10 gc-cons-threshold))
 
 ;; completion
 (setq completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
 (icomplete-mode 1)
+
+;; command
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+;; path setting
+(exec-path-from-shell-initialize)
 
 ; server start for emacs-client
 (require 'server)
