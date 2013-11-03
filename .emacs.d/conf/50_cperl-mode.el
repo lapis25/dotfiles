@@ -12,7 +12,7 @@
         cperl-indent-region-fix-constructs nil;
         cperl-indent-subs-specially nil;
         cperl-comment-column 40
-        cperl-label-offset -4
+        cperl-label-offset nil
         ;cperl-invalid-face nil
         cperl-invalid-face (quote default);
         ;cperl-lazy-help-time 0;
@@ -27,6 +27,8 @@
                (setq indent-tabs-mode nil)
                (turn-on-font-lock)
                ))
+  ;; (auto-install-from-url http://coderepos.org/share/export/39208/lang/elisp/set-perl5lib/set-perl5lib.el)
+  (require 'set-perl5lib)
 
   ;; perl-completion
   (add-hook 'cperl-mode-hook
@@ -65,6 +67,24 @@
       (interactive)
       (save-excursion (mark-defun)
                       (perltidy-region)))))
+
+;; run-test
+(defun perl-run-test ()
+  "run test"
+  (interactive)
+  (compile
+   (format "cd  %s; %s -Mlocal::lib=./local -It/inc -Ilib -Iinc %s"
+           (replace-regexp-in-string
+            "\n+$" ""
+            (shell-command-to-string "git rev-parse --show-cdup"))
+           (expand-file-name "/usr/local/perl-5.14.4/bin/perl")
+           (buffer-file-name (current-buffer)))))
+
+(add-hook 'cperl-mode-hook
+          '(lambda()
+             (progn
+               (define-key cperl-mode-map (kbd "C-c t") 'perl-run-test)
+               (define-key cperl-mode-map (kbd "C-c C-t") 'perl-run-test))))
 
 (progn
   (autoload 'pod-mode "pod-mode" "Mode for editing POD files" t)
