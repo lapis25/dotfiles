@@ -4,12 +4,11 @@
 (show-paren-mode 1)
 
 ;; window
-(unless darwin-p
-  (menu-bar-mode nil))
-(tool-bar-mode nil)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 
 (require 'color-theme)
-(color-theme-pok-wob)
+;(color-theme-pok-wob)
 
 ;;bell消す
 (setq ring-bell-function (lambda () ()))
@@ -34,7 +33,10 @@
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 
+(push '("*Anything Completions*" :position right :width 0.5 :noselect t) popwin:special-display-config)
+(push '("*anything for files*" :position right :width 0.5 :noselect t) popwin:special-display-config)
 (push '("*compilation*" :position right :width 0.5 :noselect t) popwin:special-display-config)
+(push '(man-mode :position right :width 0.5 :noselect t) popwin:special-display-config)
 
 ;; 分割windowでも改行
 (setq truncate-partial-width-windows nil)
