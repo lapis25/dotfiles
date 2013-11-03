@@ -2,7 +2,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/man:$MANPATH
 export LANG=en_US.UTF-8
 
-export DISPLAY=:0
 export EDITOR=vim
 export PAGER=less
 
