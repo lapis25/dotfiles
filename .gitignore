@@ -1,3 +1,4 @@
 .emacs.d/history
 .emacs.d/install-lisp/
-
+.emacs.d/elpa
+.emacs.d/tramp
