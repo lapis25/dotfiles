@@ -17,3 +17,9 @@ elif [ -S $agent ]; then
 else
         echo "no ssh-agent"
 fi
+
+export PATH="$HOME/.gem/bin:$PATH"
+export GEM_HOME=$HOME/.gem
+
+export PATH="$HOME/.plenv/bin:$PATH"
+

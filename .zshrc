@@ -24,4 +24,3 @@ function history-all { history -E 1 }
 alias l=less
 alias s="screen -R"
 alias e='emacsclient'
-
