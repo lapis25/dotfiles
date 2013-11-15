@@ -1,7 +1,7 @@
 ;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
 ;; load-path set
-;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/install-lisp"))
 
 ;; package.el
